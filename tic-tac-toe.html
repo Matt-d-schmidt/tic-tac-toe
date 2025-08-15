@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="3t-script.js" defer></script>
+    <link rel="stylesheet" href="3t-style.css">
+</head>
+
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="game">
+        <div class="header">
+            <h3>Choose game mode if you want</h3>
+            <select class="game-mode">
+                <option value="1">Player vs Player</option>
+                <option value="2">Player vs Computer</option>
+            </select>
+            <button class="player choosen">
+                <span class="name">x</span>
+                <span class="score">-</span>
+            </button>
+            <button class="player">
+                <span class="name">o</span>
+                <span class="score">-</span>
+            </button>
+            <div class="game-summary">Start Game or Select Player</div>
+        </div>
+
+        <div class="board">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="winner x-winner">
+                <div class="x-shape"></div>
+                Winner!
+            </div>
+            <div class="winner o-winner">
+                <div class="o-shape"></div>
+                Winner!
+            </div>
+            <div class="winner draw">
+                <div class="x-shape"></div>
+                <div class="o-shape"></div>
+                Draw!
+            </div>
+        </div>
+
+        <div class="footer">
+            <button class="restart">Restart Game</button>
+        </div>
+    </div>
+</body>
+
+</html>
