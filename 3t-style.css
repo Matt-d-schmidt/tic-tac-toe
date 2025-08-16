@@ -1,0 +1,253 @@
+:root {
+    --primary-color: #960000;
+    --secondary-color: #20201f;
+    --text-color: #939292;
+    --border-color: #3c4043;
+    --highlight-color: #a10d0d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--secondary-color);
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 38px;
+    margin: 30px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.game {
+    width: 650px;
+    margin: 20px auto;
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.game .header {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.game .header h3 {
+    color: var(--text-color);
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+
+.game #game-mode {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.game #game-mode:hover {
+    background-color: var(--highlight-color);
+    transition: all 0.3s;
+    transform: scale(1.05);
+    border-radius: 6px;
+}
+
+option {
+    border: none;
+    outline: none;
+    background: var(--secondary-color);
+    color: white;
+    transition: 0.3s;
+}
+
+option:hover,
+option:focus {
+    background: var(--text-color);
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+.game .header>button {
+    padding: 8px 30px;
+    background: none;
+    color: white;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: var(--border-color);
+    border-radius: 6px;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.game .header>button.choosen {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.game .header>button:hover {
+    background-color: var(--highlight-color);
+    transition: all 0.3s;
+    transform: scale(1.05);
+}
+
+.game .header .game-summary {
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 15px;
+}
+
+.game .header .restart-info {
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 15px;
+}
+
+.game .game-cards {
+    padding: 15px 0;
+    width: 240px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.game .game-cards .card {
+    width: 80px;
+    height: 80px;
+    border-right: 7px solid var(--highlight-color);
+    border-bottom: 7px solid var(--highlight-color);
+    position: relative;
+}
+
+.game .x-shape::before,
+.game .x-shape::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 55px;
+    background-color: #545454;
+    top: 50%;
+    left: 50%;
+}
+
+.game .x-shape::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.game .x-shape::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.game .o-shape {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 6px solid white;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.game .game-cards .card:nth-of-type(3),
+.game .game-cards .card:nth-of-type(6),
+.game .game-cards .card:nth-of-type(9) {
+    border-right: none;
+}
+
+.game .game-cards .card:nth-of-type(7),
+.game .game-cards .card:nth-of-type(8),
+.game .game-cards .card:nth-of-type(9) {
+    border-bottom: none;
+}
+
+.game .winner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    top: -100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #545454;
+    transition: 0.3s;
+}
+
+.game .winner.show {
+    top: 0;
+}
+
+.game .winner .x-shape::after,
+.game .winner .x-shape::before {
+    top: 24%;
+    width: 10px;
+    height: 90px;
+}
+
+.game .winner .o-shape {
+    width: 90px;
+    height: 90px;
+    border-width: 11px;
+    top: 23%;
+}
+
+.game .draw .x-shape::after,
+.game .draw .x-shape::before {
+    left: 28%;
+}
+
+.game .draw .o-shape {
+    left: 70%;
+}
+
+.game .footer {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+}
+
+.game .footer button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.game .footer button:hover {
+    transform: scale(1.1);
+}

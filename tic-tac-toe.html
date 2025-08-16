@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="3t-script.js" defer></script>
+    <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="3t-style.css">
+    <script src="3t-script.js" defer></script>
 </head>
 
 <body>
@@ -14,9 +14,9 @@
     <div class="game">
         <div class="header">
             <h3>Choose game mode if you want</h3>
-            <select class="game-mode">
-                <option value="1">Player vs Player</option>
-                <option value="2">Player vs Computer</option>
+            <select id="game-mode" class="selector">
+                <option class="option" value="pc">Player vs Computer</option>
+                <option class="option" value="human">Player vs Player</option>
             </select>
             <button class="player choosen">
                 <span class="name">x</span>
@@ -27,9 +27,10 @@
                 <span class="score">-</span>
             </button>
             <div class="game-summary">Start Game or Select Player</div>
+            <div class="restart-info">Use ' r ' or click button to restart</div>
         </div>
 
-        <div class="board">
+        <div class="game-cards">
             <div class="card"></div>
             <div class="card"></div>
             <div class="card"></div>
